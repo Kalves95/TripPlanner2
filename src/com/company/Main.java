@@ -13,6 +13,8 @@ public class Main {
         SkiTrip st1 = new SkiTrip("Norway", 8, "Ole ", "Hansen", true);
         BeachTrip bt1 = new BeachTrip("Hawaii", 28, "Niel ", "Jensen", 36);
 
+
+        System.out.println("Hello There!");
         menu(console, trips);
 
     }
