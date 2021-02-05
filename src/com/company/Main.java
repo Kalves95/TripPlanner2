@@ -9,11 +9,6 @@ public class Main {
         Scanner console = new Scanner(System.in);
         ArrayList<Trip> trips = new ArrayList();
 
-        Trip t1 = new Trip("Spain", 14, "Lars ", "Andersen");
-        SkiTrip st1 = new SkiTrip("Norway", 8, "Ole ", "Hansen", true);
-        BeachTrip bt1 = new BeachTrip("Hawaii", 28, "Niel ", "Jensen", 36);
-
-
         System.out.println("Hello There!");
         menu(console, trips);
 
@@ -75,7 +70,7 @@ public class Main {
         System.out.println("-1 to leave menu");
         while (flag) {
             switch (scan.nextInt()) {
-                case 1:
+                case 1 -> {
                     System.out.println("You've chosen to create a Trip");
                     createTrip(scan, trips);
                     System.out.println("Enter 1 to create Trip");
@@ -83,8 +78,8 @@ public class Main {
                     System.out.println("Enter 3 to create BeachTrip");
                     System.out.println("Enter 4 to show trip list");
                     System.out.println("-1 to leave menu");
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("You've chosen to create a SkiTrip");
                     createSkiTrip(scan, trips);
                     System.out.println("Enter 1 to create Trip");
@@ -92,8 +87,8 @@ public class Main {
                     System.out.println("Enter 3 to create BeachTrip");
                     System.out.println("Enter 4 to show trip list");
                     System.out.println("-1 to leave menu");
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("You've chosen to create a BeachTrip");
                     createBeachTrip(scan, trips);
                     System.out.println("Enter 1 to create Trip");
@@ -101,21 +96,18 @@ public class Main {
                     System.out.println("Enter 3 to create BeachTrip");
                     System.out.println("Enter 4 to show trip list");
                     System.out.println("-1 to leave menu");
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("You've chosen to print list");
-                    System.out.println(trips+"\n");
+                    System.out.println(trips + "\n");
                     System.out.println("Enter 1 to create Trip");
                     System.out.println("Enter 2 to create SkiTrip");
                     System.out.println("Enter 3 to create BeachTrip");
                     System.out.println("Enter 4 to show trip list");
                     System.out.println("-1 to leave menu");
-                    break;
-                case -1:
-                    flag = false;
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + scan.nextInt());
+                }
+                case -1 -> flag = false;
+                default -> throw new IllegalStateException("Unexpected value: " + scan.nextInt());
             }
         }
     }
